@@ -1,0 +1,27 @@
+.App {
+  width: 50%;
+  max-width: 700px;
+  min-width: 300px;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  padding: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+button {
+  width: 30%;
+  background-color: none;
+  border: 0;
+  font-size: 1.5em;
+  border: 1px solid black;
+  padding: 10px;
+  display: block;
+  margin: auto;
+}
