@@ -5,9 +5,7 @@ import "./main.scss";
 class MainPageComponent extends Component {
   render() {
     return (
-      <div
-        className="main-page"
-      >
+      <div className="main-page">
         <div className="photo-block">
           <div className="text-block">
             <h1>
@@ -22,8 +20,9 @@ class MainPageComponent extends Component {
           <button>Start use</button>
         </div>
 
-        <div className="photo-scroll-block">
-                
+        <div className="todo-photo-block">
+          
+          <img src="/images/todoblock-image.png" alt="todolistblock" />
         </div>
       </div>
     );

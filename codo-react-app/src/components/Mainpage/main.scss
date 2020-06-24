@@ -1,42 +1,43 @@
 .main-page {
   width: 100%;
-  height: 450px;
-  display: block;
-  padding: 20px;
-  background: linear-gradient(
-      0deg,
-      rgba(32, 43, 48, 0.8),
-      rgba(32, 43, 48, 0.8)
-    ),
-    url("https://www.italianbark.com/wp-content/uploads/2019/02/how-to-design-productive-homeoffice-italianbark-interiordesign-blog-2.jpg   ");
-  background-size: cover;
 
-  .text-block {
+  .photo-block {
     width: 100%;
-    margin-left: 5%;
     height: 300px;
     display: block;
     min-width: 300px;
-    float: left;
-    h1 {
-      color: white;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 400;
-      font-size: 2.2em;
-      margin-top: 50px;
-    }
+    height: 450px;
+    display: block;
+    padding: 20px;
+    background: linear-gradient(
+        0deg,
+        rgba(32, 43, 48, 0.8),
+        rgba(32, 43, 48, 0.8)
+      ),
+      url("https://www.italianbark.com/wp-content/uploads/2019/02/how-to-design-productive-homeoffice-italianbark-interiordesign-blog-2.jpg   ");
+    background-size: cover;
 
-    .upside {
-      margin-right: 20px;
-    }
+    .text-block {
+      h1 {
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 2.2em;
+        margin-top: 50px;
+      }
 
-    p {
-      font-size: 1.1em;
-      font-family: "Montserrat", sans-serif;
-      color: white;
-      width: 70%;
-      text-align: justify;
-      
+      .upside {
+        margin-right: 20px;
+      }
+
+      p {
+        font-size: 1.1em;
+        font-family: "Montserrat", sans-serif;
+        min-width: 250px;
+        color: white;
+        width: 30%;
+        text-align: justify;
+      }
     }
   }
 
@@ -64,6 +65,23 @@
     &:active {
       color: darken(#ff8412, 15%);
       border: 2px solid darken(#ff8412, 15%);
+    }
+  }
+
+  .todo-photo-block {
+    width: 100%;
+    height: 100%;
+    height: 300px;
+    padding: 20px;
+    background-color: #0B151A;
+
+    img {
+      float: left;
+      margin-left: 20px;
+      width: 280px;
+      height: 160px;
+      display: block;
+      border: 1px solid #FF8412;
     }
   }
 }
