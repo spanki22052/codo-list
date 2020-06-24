@@ -21,8 +21,16 @@ class MainPageComponent extends Component {
         </div>
 
         <div className="todo-photo-block">
-          
-          <img src="/images/todoblock-image.png" alt="todolistblock" />
+          <div className="main-text">
+            <h1>Beautiful todo blocks</h1>
+          </div>
+          <div className="objects-holder">
+            <img src="/images/todoblock-image.png" alt="todolistblock" />
+            <p>
+              With CodoList you will can to controll your tasks with comfortable
+              todo blocks
+            </p>
+          </div>
         </div>
       </div>
     );
