@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import "./login.scss";
 
 class LoginPage extends Component {
+  constructor() {
+    
+  }
+
   render() {
     return (
       <div className="login-page">

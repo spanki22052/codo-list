@@ -3,6 +3,7 @@ import { Component } from "react";
 import "./main.scss";
 
 class MainPageComponent extends Component {
+
   render() {
     return (
       <div className="main-page">
