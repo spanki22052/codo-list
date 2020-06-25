@@ -69,6 +69,7 @@ class RegisterPage extends Component {
   };
 
   registerNewPerson = () => {
+    console.log(this.state.inputEmail);
     this.state.passwordInput === this.state.repeatPasswordInput &&
     this.state.repeatPasswordInput.length > 0 &&
     this.state.inputEmail.length > 0
@@ -81,7 +82,7 @@ class RegisterPage extends Component {
           .then(
             (autRes) => {
               const userObj = {
-                email: autRes.user.inputEmail,
+                email: this.state.inputEmail,
                 password: this.state.passwordInput,
               };
 
@@ -106,11 +107,6 @@ class RegisterPage extends Component {
             }
           )
       : this.setState({ signupError: "Failed to add user" });
-    this.setState({
-      inputEmail: "",
-      passwordInput: "",
-      repeatPasswordInput: "",
-    });
   };
 }
 

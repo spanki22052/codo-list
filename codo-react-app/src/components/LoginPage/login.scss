@@ -12,6 +12,17 @@
   transform: translate(-50%, -50%);
   padding: 20px;
 
+  @media (max-width: 600px) {
+    height: 430px;
+    top: 60%;
+  }
+  .login-error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+
   h1 {
     font-size: 2.5em;
     font-family: "Montserrat", sans-serif;
@@ -35,6 +46,17 @@
     display: flex;
     justify-content: space-around;
 
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        display: block;
+        margin-top: 5px;
+      }
+    }
+
     button {
       height: 40px;
       border: 0;
@@ -51,6 +73,7 @@
       padding-right: 50px;
       background: #1d2b31;
       border-radius: 4px;
+
 
       &:hover {
         color: #c96b14;
