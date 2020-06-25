@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "./login.scss";
+import "./register.scss";
 
-class LoginPage extends Component {
+class RegisterPage extends Component {
   render() {
     return (
       <div className="login-page">
-        <h1>Login</h1>
+        <h1>Register</h1>
         <div className="line"></div>
         <div className="input-block">
           <p>email:</p>
@@ -15,15 +15,19 @@ class LoginPage extends Component {
           <p>password:</p>
           <input type="password" />
         </div>
+        <div className="input-block">
+          <p>repeat password:</p>
+          <input type="password" />
+        </div>
         <div className="buttons-block">
-          <button>Login</button>
-          <a href="/register">
-            <button>Register</button>
+          <a href="/login">
+            <button>Login</button>
           </a>
+          <button>Register</button>
         </div>
       </div>
     );
   }
 }
 
-export default LoginPage;
+export default RegisterPage;

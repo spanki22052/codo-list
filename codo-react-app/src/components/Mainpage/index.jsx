@@ -1,7 +1,6 @@
 import React from "react";
 import { Component } from "react";
 import "./main.scss";
-import { Link } from "react-router-dom";
 
 class MainPageComponent extends Component {
   render() {
