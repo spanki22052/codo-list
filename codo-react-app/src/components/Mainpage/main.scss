@@ -1,9 +1,8 @@
 .main-page {
   width: 100%;
-
   .photo-block {
     width: 100%;
-    height: 300px;
+    height: 100%;
     display: block;
     min-width: 300px;
     height: 450px;
@@ -67,12 +66,15 @@
       border: 2px solid darken(#ff8412, 15%);
     }
   }
-
   .todo-photo-block {
     width: 100%;
-    height: 100%;
+    background-color: #0b151a;
     padding: 20px;
-    background-color: #182023;
+    height: 300px;
+
+    @media (max-width: 850px) {
+      height: 500px;
+    }
 
     .main-text {
       width: 100%;
@@ -86,30 +88,104 @@
       }
     }
 
-    .text-holder {
-      width: 50%;
-      background-color: black;
-      min-width: 250px;
-      min-height: 160px;
-      float: left;
-    }
-
     .objects-holder {
-      display: block;
+      width: 100%;
+      height: 150px;
+
+      @media (max-width: 850px) {
+        height: 300px;
+      }
+      .image-holder {
+        width: 50%;
+        float: left;
+        min-width: 300px;
+
+        @media (max-width: 850px) {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        img {
+          width: 280px;
+          height: 160px;
+          border: 1px solid #ff8412;
+          margin: auto;
+          display: block;
+          @media (max-width: 400px) {
+            margin-top: 20px;
+          }
+        }
+      }
       p {
+        width: 50%;
+        min-width: 280px;
         font-size: 1.3em;
         font-family: "Montserrat", sans-serif;
         font-weight: 400;
         color: white;
         text-align: justify;
+        margin: auto;
       }
+    }
+  }
+
+  .configures-block {
+    width: 80%;
+    height: 150px;
+    padding: 20px !important;
+    margin: auto;
+    background: #0b151a;
+    border-radius: 7px;
+
+    @media (max-width: 630px) {
+      height: 400px;
+      width: 90% !important;
+
+      .img-holder {
+        width: 100%;
+        height: 110px;
+        margin-bottom: 20px;
+        img {
+          margin: auto;
+          display: block;
+          float: none !important;
+        }
+      }
+
+      h1 {
+        text-align: center !important;
+        width: 100% !important;
+      }
+
+      p {
+        width: 95% !important;
+      }
+
+    }
+    .img-holder {
       img {
+        width: 110px;
+        height: 110px;
         float: left;
-        width: 280px;
-        height: 160px;
-        margin-left: 20px;
-        border: 1px solid #ff8412;
       }
+    }
+
+    h1,
+    p {
+      float: left;
+      margin-left: 3%;
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      text-align: justify;
+    }
+
+    h1 {
+      font-size: 2.1em;
+      width: 70%;
+    }
+
+    p {
+      font-size: 1em;
+      width: 70%;
     }
   }
 }

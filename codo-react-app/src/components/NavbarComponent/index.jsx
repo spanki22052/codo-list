@@ -6,6 +6,7 @@ import {
   montserratFont,
   NavLinkStyle,
 } from "./styles";
+import { Link } from "react-router-dom";
 
 class NavbarComponent extends Component {
   render() {
@@ -18,7 +19,7 @@ class NavbarComponent extends Component {
               fontFamily: montserratFont,
               fontWeight: "900",
             }}
-            href="#home"
+            href="/"
           >
             CodoList
           </Navbar.Brand>
@@ -28,8 +29,12 @@ class NavbarComponent extends Component {
             id="basic-navbar-nav"
             className="justify-content-end"
           >
-            <Nav.Link style={NavLinkStyle}>home</Nav.Link>
-            <Nav.Link style={NavLinkStyle}>login</Nav.Link>
+            <Nav.Link style={NavLinkStyle} href='/'>home</Nav.Link>
+            <Nav.Link style={NavLinkStyle}>
+              <Link to="/login" style={{ textDecoration: "none", color: orangeColor }}>
+                login
+              </Link>
+            </Nav.Link>
           </Navbar.Collapse>
         </Navbar>
       </div>
