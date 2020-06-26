@@ -34,14 +34,14 @@ class NavbarComponent extends Component {
             CodoList
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse
-            id="basic-navbar-nav"
-            className="justify-content-end"
-          >
-            <Nav.Link style={NavLinkStyle} href="/">
-              home
-            </Nav.Link>
-            {this.state.email.length > 0 ? (
+          {this.state.email.length > 0 ? (
+            <Navbar.Collapse
+              id="basic-navbar-nav"
+              className="justify-content-end"
+            >
+              <Nav.Link style={NavLinkStyle} href="/dashboard">
+                dashboard
+              </Nav.Link>
               <Nav.Link
                 onClick={this.firebaseSignOut}
                 style={NavLinkStyle}
@@ -49,12 +49,17 @@ class NavbarComponent extends Component {
               >
                 signout
               </Nav.Link>
-            ) : (
-              <Nav.Link style={NavLinkStyle} href="/signup">
-                signup
+            </Navbar.Collapse>
+          ) : (
+            <Navbar.Collapse
+              id="basic-navbar-nav"
+              className="justify-content-end"
+            >
+              <Nav.Link style={NavLinkStyle} href="/login">
+                login
               </Nav.Link>
-            )}
-          </Navbar.Collapse>
+            </Navbar.Collapse>
+          )}
         </Navbar>
       </div>
     );

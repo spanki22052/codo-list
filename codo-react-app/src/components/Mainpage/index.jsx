@@ -36,9 +36,6 @@ class MainPageComponent extends Component {
               todo blocks
             </p>
           </div>
-          <a href="/login">
-            <button>Start use</button>
-          </a>
         </div>
         <br />
         <div className="configures-block">
