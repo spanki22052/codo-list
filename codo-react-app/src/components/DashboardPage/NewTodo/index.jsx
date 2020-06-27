@@ -61,19 +61,20 @@ class NewTodo extends Component {
               },
             ],
           })
-          .then(
-            (dbError) => {
-              console.log(dbError);
-              this.setState({ signupError: "Failed to load user" });
-            }
-          )
+          .then((dbError) => {
+            console.log(dbError);
+            this.setState({ signupError: "Failed to load user" });
+          })
       : console.log("can't create");
-    this.props.addTodo({
-      description: this.state.descriptionInput,
-      isFinished: false,
-      percentage: 0,
-      todo: this.state.todoInput,
-    });
+
+    this.state.todoInput.length > 0 &&
+      this.state.descriptionInput.length > 0 ? 
+      this.props.addTodo({
+        description: this.state.descriptionInput,
+        isFinished: false,
+        percentage: 0,
+        todo: this.state.todoInput,
+      }) : console.log('mistake')
     this.setState({ todoInput: "", descriptionInput: "" });
   };
 }
