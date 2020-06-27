@@ -10,10 +10,12 @@ class DasboardPageComponent extends Component {
       todos: [],
       email: "",
       showNew: "none",
+      itemsFilter: [true],
     };
   }
 
   componentDidMount = () => {
+    console.log("hello wolrd");
     firebase.auth().onAuthStateChanged(async (_usr) => {
       if (!_usr) this.props.history.push("/");
       else {
@@ -50,6 +52,25 @@ class DasboardPageComponent extends Component {
     }
   };
 
+  changeElementByIndex = (index, bool) => {
+    const newTodos = [...this.state.todos];
+    newTodos[index].isFinished = bool;
+    this.setState({ todos: newTodos})
+    firebase
+      .firestore()
+      .collection("todo")
+      .doc(this.state.email)
+      .set({
+        todolist: [...newTodos],
+      });
+  };
+
+  todosFilteredChanged = (action) => {
+    this.setState({
+      itemsFilter: [action],
+    });
+  };
+
   render() {
     return (
       <div className="dashboard-page">
@@ -62,11 +83,28 @@ class DasboardPageComponent extends Component {
           }
           changeDisplay={() => this.setState({ showNew: "none" })}
         />
+
+        {this.state.todos.length > 0 && (
+          <div className="buttons-block">
+            <button
+              className="finished-btn"
+              onClick={() => this.setState({ itemsFilter : [true]})}
+            >
+              Finished
+            </button>
+            <button
+              onClick={() => this.setState({ itemsFilter : [false]})}
+              className="unfinished-btn"
+            >
+              Not Finished
+            </button>
+          </div>
+        )}
         {this.state.todos.length > 0 ? (
           <div className="todo-blocks">
             {this.state.todos.map((element, index) => {
               let percentageCounter = 440 + element.percentage * 2 + 10;
-              return (
+              return element.isFinished === this.state.itemsFilter[0] && (
                 <div key={index} className="todo-block">
                   <div className="processbar-side">
                     <div className="percent">
@@ -90,7 +128,17 @@ class DasboardPageComponent extends Component {
                       </div>
                     </div>
                     <button className="edit-button">Edit</button>
-                    <button className="finish-button">Finish</button>
+                    <button
+                      onClick={() =>
+                        this.changeElementByIndex(
+                          index,
+                          !this.state.itemsFilter[0]
+                        )
+                      }
+                      className="finish-button"
+                    >
+                      Finish
+                    </button>
                   </div>
                   <div className="text-side">
                     <h1>{element.todo}</h1>

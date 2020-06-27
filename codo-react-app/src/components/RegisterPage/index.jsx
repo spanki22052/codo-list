@@ -12,6 +12,12 @@ class RegisterPage extends Component {
       signupError: null,
     };
   }
+  
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged(async (_usr) => {
+      if (_usr) this.props.history.push("/dashboard");
+    });
+  };
 
   render() {
     return (

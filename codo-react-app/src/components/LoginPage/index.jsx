@@ -8,9 +8,15 @@ class LoginPage extends Component {
     this.state = {
       emailInput: "",
       passwordInput: "",
-      loginError: null
+      loginError: null,
     };
   }
+
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged(async (_usr) => {
+      if (_usr) this.props.history.push("/dashboard");
+    });
+  };
 
   render() {
     return (
