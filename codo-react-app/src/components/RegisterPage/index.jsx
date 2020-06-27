@@ -69,7 +69,6 @@ class RegisterPage extends Component {
   };
 
   registerNewPerson = () => {
-    console.log(this.state.inputEmail);
     this.state.passwordInput === this.state.repeatPasswordInput &&
     this.state.repeatPasswordInput.length > 0 &&
     this.state.inputEmail.length > 0
@@ -81,16 +80,38 @@ class RegisterPage extends Component {
           )
           .then(
             (autRes) => {
-              const userObj = {
-                email: this.state.inputEmail,
-                password: this.state.passwordInput,
-              };
-
               firebase
                 .firestore()
                 .collection("users")
                 .doc(this.state.inputEmail)
-                .set(userObj)
+                .set({
+                  email: this.state.inputEmail,
+                  password: this.state.passwordInput,
+                })
+                .then(
+                  () => {
+                    this.props.history.push("/dashboard");
+                  },
+                  (dbError) => {
+                    console.log(dbError);
+                    this.setState({ signupError: "Failed to load user" });
+                  }
+                );
+            },
+            (authErr) => {
+              console.log(authErr);
+              this.setState({ signupError: "Failed to add user" });
+            }
+          )
+          .then(
+            (autRes) => {
+              firebase
+                .firestore()
+                .collection("todo")
+                .doc(this.state.inputEmail)
+                .set({
+                  todolist: [],
+                })
                 .then(
                   () => {
                     this.props.history.push("/dashboard");

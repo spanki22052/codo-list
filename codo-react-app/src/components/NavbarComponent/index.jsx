@@ -21,7 +21,6 @@ class NavbarComponent extends Component {
   render() {
     return (
       <div className="navbar-component">
-        {console.log(this.state.email)}
         <Navbar style={darkBackground} expand="lg">
           <Navbar.Brand
             style={{

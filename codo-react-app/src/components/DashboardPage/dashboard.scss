@@ -1,0 +1,153 @@
+.dashboard-page {
+  width: 100%;
+  height: 100%;
+
+  .todo-blocks {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+
+    .todo-block {
+      width: 280px;
+      height: 150px;
+      background: #0b151a;
+      padding: 10px;
+
+      .processbar-side {
+        width: 95px;
+        float: left;
+
+        button {
+          width: 80px;
+          height: 30px;
+          margin-top: 5px;
+          border: 0;
+          outline: none;
+          box-sizing: border-box;
+          background: none;
+          font-family: "Montserrat", sans-serif;
+          font-size: 1em;
+          font-weight: 300;
+        }
+
+        .edit-button {
+          border: 1px solid #9195ff;
+          color: #9195ff;
+
+          &:hover {
+            border: 1px solid #7578dd;
+            color: #7578dd;
+          }
+
+          &:active {
+            border: 1px solid #676ac2;
+            color: #676ac2;
+          }
+
+        }
+
+        .finish-button {
+          border: 1px solid #0dc160;
+          color: #0dc160;
+
+          &:hover {
+            border: 1px solid #1c9454;
+            color: #1c9454;
+          }
+
+          &:active {
+            border: 1px solid #58af81;
+            color: #58af81;
+          }
+        }
+      }
+
+      .text-side {
+        width: 160px;
+
+        float: left;
+        height: 100%;
+
+        h1,
+        p {
+          font-family: "Montserrat", sans-serif;
+          color: white;
+        }
+        h1 {
+          width: 100%;
+          font-weight: 200;
+          font-size: 1.2em;
+          text-align: center;
+        }
+
+        p {
+          font-size: 0.8em;
+          text-align: justify;
+        }
+      }
+    }
+  }
+
+  .text-holder {
+    width: 100%;
+    height: 150px;
+    .gray-text {
+      height: 100px;
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 29px;
+      line-height: 35px;
+
+      width: 80%;
+      text-align: center;
+      color: #636363;
+      position: absolute;
+      top: 125px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .gray-box {
+    width: 280px;
+    padding: 45px 0px 45 px 0px;
+    float: left;
+    margin-left: 15%;
+    background: #1d2b31;
+    border: 1px dashed #c1c1c1;
+    box-sizing: border-box;
+    display: block;
+
+    @media (max-width: 400px) {
+      margin: auto;
+      float: none;
+    }
+
+    button {
+      margin: auto;
+      outline: none;
+      display: block;
+      width: 130px;
+      height: 60px;
+      text-align: center;
+      font-size: 2.5em;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      color: #ff8412;
+      border: 0;
+      background: #131c20;
+      border-radius: 5px;
+
+      &:hover {
+        background: #1b2429;
+      }
+
+      &:active {
+        background: #141f25;
+      }
+    }
+  }
+}
