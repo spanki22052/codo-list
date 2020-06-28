@@ -12,7 +12,7 @@ class RegisterPage extends Component {
       signupError: null,
     };
   }
-  
+
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(async (_usr) => {
       if (_usr) this.props.history.push("/dashboard");
@@ -49,10 +49,10 @@ class RegisterPage extends Component {
           />
         </div>
         <div className="buttons-block">
-          <a href="/login">
-            <button>Login</button>
-          </a>
           <button onClick={this.registerNewPerson}>Register</button>
+        </div>
+        <div className="login-a">
+          <a href="/login">Login</a>
         </div>
         <p className="signup-error">{this.state.signupError}</p>
       </div>

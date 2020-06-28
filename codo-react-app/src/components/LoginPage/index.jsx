@@ -41,9 +41,9 @@ class LoginPage extends Component {
         </div>
         <div className="buttons-block">
           <button onClick={this.signIn}>Login</button>
-          <a href="/register">
-            <button>Register</button>
-          </a>
+        </div>
+        <div className="login-a">
+          <a href="/register">Register</a>
         </div>
         <p className="login-error">{this.state.loginError}</p>
       </div>

@@ -12,7 +12,7 @@ class DasboardPageComponent extends Component {
       email: "",
       showNew: "none",
       showEdit: "none",
-      itemsFilter: [true],
+      itemsFilter: [false],
       returnEditBlock: null,
       editIndex: 0,
     };

@@ -12,6 +12,7 @@
   transform: translate(-50%, -50%);
   padding: 20px;
 
+
   .signup-error {
     margin-top: 10px;
     width: 100%;
@@ -21,7 +22,6 @@
 
   @media (max-width: 800px) {
     height: 470px;
-    top: 65%;
   }
   h1 {
     font-size: 2.5em;
@@ -37,6 +37,19 @@
     width: 75%;
     min-width: 230px;
     margin: auto;
+  }
+
+  .login-a {
+    width: 75%;
+    margin: auto;
+    display: block;
+    min-width: 240px;
+    padding-top: 25px;
+
+    a {
+      font-size: 1.15em;
+      font-family: "Montserrat", sans-serif;
+    }
   }
 
   .buttons-block {
