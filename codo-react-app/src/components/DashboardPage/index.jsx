@@ -19,7 +19,6 @@ class DasboardPageComponent extends Component {
   }
 
   componentDidMount = () => {
-    console.log("hello wolrd");
     firebase.auth().onAuthStateChanged(async (_usr) => {
       if (!_usr) this.props.history.push("/");
       else {
@@ -80,7 +79,6 @@ class DasboardPageComponent extends Component {
     newTodos[index].percentage < 100
       ? (newTodos[index].percentage = 100)
       : (newTodos[index].percentage = 0);
-    console.log(newTodos[index].percentage);
     this.setState({ todos: newTodos });
     firebase
       .firestore()

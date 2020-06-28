@@ -113,7 +113,6 @@ class EditTodo extends Component {
     todolist.splice(this.props.index, 1);
     this.props.changeTodo(todolist);
     this.props.changeDisplay();
-    console.log(todolist)
 
     this.state.todoInput.length > 0 &&
     this.state.todoInput.length < 30 &&
