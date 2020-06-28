@@ -21,7 +21,7 @@ class NavbarComponent extends Component {
   render() {
     return (
       <div className="navbar-component">
-        <Navbar style={darkBackground} expand="lg">
+        <Navbar style={{ backgroundColor: "#182023", zIndex: "100" }} expand="lg">
           <Navbar.Brand
             style={{
               color: orangeColor,
