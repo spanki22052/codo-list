@@ -54,7 +54,7 @@ class NewTodo extends Component {
   }
 
   createNewTodo = () => {
-    this.state.todoInput.length > 0 && this.state.todoInput.length < 25 && this.state.descriptionInput.length > 0  && this.state.descriptionInput.length < 50
+    this.state.todoInput.length > 0 && this.state.todoInput.length < 30 && this.state.descriptionInput.length > 0  && this.state.descriptionInput.length < 50
       ? firebase
           .firestore()
           .collection("todo")
@@ -76,7 +76,7 @@ class NewTodo extends Component {
           })
       : console.log("can't create");
 
-      this.state.todoInput.length > 0 && this.state.todoInput.length < 25 && this.state.descriptionInput.length > 0  && this.state.descriptionInput.length < 50
+      this.state.todoInput.length > 0 && this.state.todoInput.length < 30 && this.state.descriptionInput.length > 0  && this.state.descriptionInput.length < 50
       ? this.props.addTodo({
           description: this.state.descriptionInput,
           isFinished: false,

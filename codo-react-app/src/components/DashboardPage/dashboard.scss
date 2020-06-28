@@ -180,7 +180,6 @@
 
       .text-side {
         width: 160px;
-
         float: left;
         height: 100%;
 
@@ -191,6 +190,7 @@
         }
         h1 {
           width: 100%;
+          overflow: hidden;
           font-weight: 200;
           font-size: 1.2em;
           text-align: center;

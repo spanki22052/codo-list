@@ -66,7 +66,9 @@ class EditTodo extends Component {
           >
             Close
           </button>
-          <button className="edit-btn">Remove</button>
+          <button onClick={this.removeTodo} className="edit-btn">
+            Remove
+          </button>
           <button onClick={this.editTodo} className="ready-btn">
             Ready
           </button>
@@ -88,7 +90,33 @@ class EditTodo extends Component {
     this.props.changeTodo(todolist);
 
     this.state.todoInput.length > 0 &&
-    this.state.todoInput.length < 25 &&
+    this.state.todoInput.length < 30 &&
+    this.state.descriptionInput.length > 0 &&
+    this.state.descriptionInput.length < 50
+      ? firebase
+          .firestore()
+          .collection("todo")
+          .doc(this.props.email)
+          .set({
+            todolist,
+          })
+          .then((dbError) => {
+            console.log(dbError);
+            this.setState({ signupError: "Failed to load user" });
+          })
+      : console.log("can't create");
+  };
+
+  removeTodo = () => {
+    const todolist = [...this.props.todos];
+
+    todolist.splice(this.props.index, 1);
+    this.props.changeTodo(todolist);
+    this.props.changeDisplay();
+    console.log(todolist)
+
+    this.state.todoInput.length > 0 &&
+    this.state.todoInput.length < 30 &&
     this.state.descriptionInput.length > 0 &&
     this.state.descriptionInput.length < 50
       ? firebase
