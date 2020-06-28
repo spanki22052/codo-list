@@ -90,6 +90,12 @@ class EditTodo extends Component {
     this.props.changeTodo(todolist);
 
     this.state.todoInput.length > 0 &&
+      this.state.todoInput.length < 30 &&
+      this.state.descriptionInput.length > 0 &&
+      this.state.descriptionInput.length < 50 &&
+      this.props.changeDisplay();
+
+    this.state.todoInput.length > 0 &&
     this.state.todoInput.length < 30 &&
     this.state.descriptionInput.length > 0 &&
     this.state.descriptionInput.length < 50
